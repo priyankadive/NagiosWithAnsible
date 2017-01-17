@@ -68,7 +68,6 @@
 
         - name: Activate Nagios site on Ubuntu
           file: src=/etc/apache2/conf-available/nagios.conf dest=/etc/apache2/conf-enabled/nagios.conf state=link owner=root group=root
-          notify: restart apache2
 
         - name: Make install-init
           shell: cd {{ ansible_env.HOME }}/nagios/{{ nagiossrc }} && make install-init creates=/etc/init.d/nagios
